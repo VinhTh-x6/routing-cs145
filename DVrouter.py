@@ -34,10 +34,10 @@ class DVrouter(Router):
 
             # Đóng gói thành routing packet và gửi đi
             pkt = Packet(
-                kind=Packet.ROUTING,
-                src_addr=self.addr,
-                dst_addr=neighbor_addr,
-                content=json.dumps(poisoned_dv)
+                Packet.ROUTING,
+                self.addr,
+                neighbor_addr,
+                json.dumps(poisoned_dv)
             )
             self.send(port, pkt)
 
